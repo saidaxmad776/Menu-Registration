@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5202358628DB290E003DA57D /* VerificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202358528DB290E003DA57D /* VerificationButton.swift */; };
+		5202358828DB2A96003DA57D /* MailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202358728DB2A96003DA57D /* MailCollectionView.swift */; };
+		5202358B28DB36F0003DA57D /* MailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5202358A28DB36F0003DA57D /* MailCollectionCell.swift */; };
 		52B9F46928DA1ED8000AF60B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9F46828DA1ED8000AF60B /* AppDelegate.swift */; };
 		52B9F46B28DA1ED8000AF60B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9F46A28DA1ED8000AF60B /* SceneDelegate.swift */; };
 		52B9F46D28DA1ED8000AF60B /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9F46C28DA1ED8000AF60B /* VerificationViewController.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5202358528DB290E003DA57D /* VerificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationButton.swift; sourceTree = "<group>"; };
+		5202358728DB2A96003DA57D /* MailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionView.swift; sourceTree = "<group>"; };
+		5202358A28DB36F0003DA57D /* MailCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailCollectionCell.swift; sourceTree = "<group>"; };
 		52B9F46528DA1ED8000AF60B /* Menu Registration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Menu Registration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B9F46828DA1ED8000AF60B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B9F46A28DA1ED8000AF60B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5202358928DB36DF003DA57D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5202358A28DB36F0003DA57D /* MailCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		52B9F45C28DA1ED8000AF60B = {
 			isa = PBXGroup;
 			children = (
@@ -100,8 +114,11 @@
 		52B9F47F28DA1F5F000AF60B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5202358928DB36DF003DA57D /* Cells */,
 				52B9F48128DA24D0000AF60B /* StatusLabel.swift */,
 				52B9F48728DA2C76000AF60B /* MailTextField.swift */,
+				5202358528DB290E003DA57D /* VerificationButton.swift */,
+				5202358728DB2A96003DA57D /* MailCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,9 +217,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B9F48228DA24D1000AF60B /* StatusLabel.swift in Sources */,
+				5202358B28DB36F0003DA57D /* MailCollectionCell.swift in Sources */,
+				5202358628DB290E003DA57D /* VerificationButton.swift in Sources */,
 				52B9F46D28DA1ED8000AF60B /* VerificationViewController.swift in Sources */,
 				52B9F48828DA2C76000AF60B /* MailTextField.swift in Sources */,
 				52B9F48628DA2B7A000AF60B /* UIStackView + Ext.swift in Sources */,
+				5202358828DB2A96003DA57D /* MailCollectionView.swift in Sources */,
 				52B9F46928DA1ED8000AF60B /* AppDelegate.swift in Sources */,
 				52B9F46B28DA1ED8000AF60B /* SceneDelegate.swift in Sources */,
 			);

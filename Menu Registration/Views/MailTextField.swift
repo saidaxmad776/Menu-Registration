@@ -34,6 +34,6 @@ class MailTextField: UITextField {
         placeholder = "Enter mail"
         font = UIFont(name: "Verdana-Bold", size: 20)
         tintColor = .darkGray
-        translatesAutoresizingMaskIntoConstraints = falsez
+        translatesAutoresizingMaskIntoConstraints = false
     }
 }
