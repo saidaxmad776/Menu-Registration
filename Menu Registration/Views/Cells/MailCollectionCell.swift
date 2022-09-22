@@ -14,6 +14,7 @@ class MailCollectionCell: UICollectionViewCell {
     private let domainLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Avenir-Black", size: 16)
+        label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

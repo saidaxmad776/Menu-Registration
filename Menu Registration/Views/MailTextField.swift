@@ -37,3 +37,18 @@ class MailTextField: UITextField {
         translatesAutoresizingMaskIntoConstraints = false
     }
 }
+
+extension MailTextField: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+}

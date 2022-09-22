@@ -24,10 +24,11 @@ class VerificationButton: UIButton {
     
     private func configure() {
         
-        backgroundColor = #colorLiteral(red: 0.6017745733, green: 0.4919376969, blue: 0.7290791273, alpha: 1)
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.red.cgColor
+        backgroundColor = .systemGray3
         setTitle("Verification Button", for: .normal)
-        let color = #colorLiteral(red: 0.2156862745, green: 0.2156862745, blue: 0.2156862745, alpha: 1)
-        setTitleColor(color, for: .normal)
+        setTitleColor(UIColor.white, for: .normal)
         layer.cornerRadius = 10
         titleLabel?.font = UIFont(name: "Avenir-Black", size: 18)
         isEnabled = false

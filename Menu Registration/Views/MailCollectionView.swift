@@ -36,6 +36,7 @@ class MailCollectionView: UICollectionView {
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .none
+        delegate = self
     }
 }
 

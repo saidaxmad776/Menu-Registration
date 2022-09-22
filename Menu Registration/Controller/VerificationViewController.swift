@@ -8,11 +8,17 @@
 import UIKit
 
 class VerificationViewController: UIViewController {
+    
 
     private let statusLabel = StatusLabel()
     private let mailTextField = MailTextField()
     private let verificationButton = VerificationButton()
     private let collectionView = MailCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private lazy var stackView = UIStackView(arrangeSubviews: [mailTextField,
+                                                               verificationButton,
+                                                               collectionView],
+                                             axis: .vertical, spacing: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +31,26 @@ class VerificationViewController: UIViewController {
 
     private func setupView() {
         
-        view.backgroundColor = #colorLiteral(red: 0.7050018907, green: 0.8277770877, blue: 0.8396216035, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
         view.addSubview(statusLabel)
+        view.addSubview(stackView)
+        
+        verificationButton.addTarget(self, action: #selector(verificationButtonTap), for: .touchUpInside)
         
     }
 
     private func setDelegate() {
         
+        collectionView.dataSource = self
+        collectionView.selectMailDelegate = self
+    }
+    
+    @objc private func verificationButtonTap() {
+        
     }
 }
 
-extension VerificationViewController: UICollectionViewDataSource {
+extension VerificationViewController: UICollectionViewDataSource, SelectProposedMailProtocol {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,6 +64,10 @@ extension VerificationViewController: UICollectionViewDataSource {
         return cell
     }
     
+    func selectProposedMail(indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
 }
 
 extension VerificationViewController {
@@ -58,7 +77,13 @@ extension VerificationViewController {
         NSLayoutConstraint.activate([
         
             statusLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 300),
-            statusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            statusLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            
+            mailTextField.heightAnchor.constraint(equalToConstant: 50),
+            stackView.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 2),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
     }
 }
