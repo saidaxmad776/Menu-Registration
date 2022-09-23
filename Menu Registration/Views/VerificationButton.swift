@@ -10,7 +10,15 @@ import UIKit
 
 class VerificationButton: UIButton {
     
-    
+    public var isValid = false {
+        didSet {
+            if self.isValid {
+                setValidSettings()
+            } else {
+                setNotValidSettings()
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +34,7 @@ class VerificationButton: UIButton {
         
         layer.borderWidth = 2
         layer.borderColor = UIColor.red.cgColor
-        backgroundColor = .systemGray3
+        backgroundColor = .systemGreen
         setTitle("Verification Button", for: .normal)
         setTitleColor(UIColor.white, for: .normal)
         layer.cornerRadius = 10
@@ -34,5 +42,19 @@ class VerificationButton: UIButton {
         isEnabled = false
         alpha = 0.5
         translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func setNotValidSettings() {
+        isEnabled = false
+        alpha = 0.5
+    }
+    
+    private func setValidSettings() {
+        isEnabled = true
+        alpha = 1
+    }
+    
+    public func setDefoultSettings() {
+        configure()
     }
 }

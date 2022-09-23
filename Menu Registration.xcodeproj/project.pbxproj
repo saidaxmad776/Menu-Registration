@@ -19,6 +19,7 @@
 		52B9F48628DA2B7A000AF60B /* UIStackView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9F48528DA2B7A000AF60B /* UIStackView + Ext.swift */; };
 		52B9F48828DA2C76000AF60B /* MailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9F48728DA2C76000AF60B /* MailTextField.swift */; };
 		52BDF68D28DD7E3500D9640E /* VerificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDF68C28DD7E3500D9640E /* VerificationModel.swift */; };
+		52BDF68F28DD828D00D9640E /* String + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BDF68E28DD828D00D9640E /* String + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		52B9F48528DA2B7A000AF60B /* UIStackView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Ext.swift"; sourceTree = "<group>"; };
 		52B9F48728DA2C76000AF60B /* MailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTextField.swift; sourceTree = "<group>"; };
 		52BDF68C28DD7E3500D9640E /* VerificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationModel.swift; sourceTree = "<group>"; };
+		52BDF68E28DD828D00D9640E /* String + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				52B9F48528DA2B7A000AF60B /* UIStackView + Ext.swift */,
+				52BDF68E28DD828D00D9640E /* String + Ext.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				52B9F48228DA24D1000AF60B /* StatusLabel.swift in Sources */,
 				5202358B28DB36F0003DA57D /* MailCollectionCell.swift in Sources */,
 				5202358628DB290E003DA57D /* VerificationButton.swift in Sources */,
+				52BDF68F28DD828D00D9640E /* String + Ext.swift in Sources */,
 				52B9F46D28DA1ED8000AF60B /* VerificationViewController.swift in Sources */,
 				52B9F48828DA2C76000AF60B /* MailTextField.swift in Sources */,
 				52B9F48628DA2B7A000AF60B /* UIStackView + Ext.swift in Sources */,

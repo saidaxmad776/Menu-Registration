@@ -33,7 +33,7 @@ class VerificationViewController: UIViewController {
 
     private func setupView() {
         
-        view.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.7554480433, green: 0.7874316573, blue: 0.84071666, alpha: 1)
         view.addSubview(statusLabel)
         view.addSubview(stackView)
         
@@ -56,18 +56,34 @@ class VerificationViewController: UIViewController {
 extension VerificationViewController: ActionMailTextFieldProtocol {
     
     func typingText(text: String) {
+        statusLabel.isValid = text.isValid()
+        verificationButton.isValid = text.isValid()
         verificationModel.getFilteredMail(text: text)
         collectionView.reloadData()
     }
     
     func cleanOutTextField() {
-        print("clear")
+        statusLabel.setDefoultSettings()
+        verificationButton.setDefoultSettings()
+        verificationModel.filterMailArray = []
+        collectionView.reloadData()
     }
     
 }
 
 extension VerificationViewController: UICollectionViewDataSource, SelectProposedMailProtocol {
     
+    func selectProposedMail(indexPath: IndexPath) {
+        guard let text = mailTextField.text else { return }
+        verificationModel.getMailName(text: text)
+        let domainMail = verificationModel.filterMailArray[indexPath.row]
+        let mailFullName = verificationModel.nameMail + domainMail
+        mailTextField.text = mailFullName
+        statusLabel.isValid = mailFullName.isValid()
+        verificationButton.isValid = mailFullName.isValid()
+        verificationModel.filterMailArray = []
+        collectionView.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         verificationModel.filterMailArray.count
@@ -76,12 +92,10 @@ extension VerificationViewController: UICollectionViewDataSource, SelectProposed
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: idCell.idMailCell.rawValue, for: indexPath) as? MailCollectionCell else { return UICollectionViewCell() }
         
+        let mailLabelText = verificationModel.filterMailArray[indexPath.row]
+        cell.cellConfigure(mailText: mailLabelText)
         
         return cell
-    }
-    
-    func selectProposedMail(indexPath: IndexPath) {
-        print(indexPath)
     }
     
 }
