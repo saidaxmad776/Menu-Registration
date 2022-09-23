@@ -20,6 +20,8 @@ class VerificationViewController: UIViewController {
                                                                collectionView],
                                              axis: .vertical, spacing: 20)
     
+    private let verificationModel = VerificationModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +45,7 @@ class VerificationViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.selectMailDelegate = self
+        mailTextField.textFieldDelegate = self
     }
     
     @objc private func verificationButtonTap() {
@@ -50,11 +53,24 @@ class VerificationViewController: UIViewController {
     }
 }
 
+extension VerificationViewController: ActionMailTextFieldProtocol {
+    
+    func typingText(text: String) {
+        verificationModel.getFilteredMail(text: text)
+        collectionView.reloadData()
+    }
+    
+    func cleanOutTextField() {
+        print("clear")
+    }
+    
+}
+
 extension VerificationViewController: UICollectionViewDataSource, SelectProposedMailProtocol {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        verificationModel.filterMailArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
